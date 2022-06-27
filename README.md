@@ -1,1 +1,2 @@
 # calculator
+Foundations Odin Project
