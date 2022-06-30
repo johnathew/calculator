@@ -45,25 +45,23 @@ function operator(e) {
 }
 
 function doMath() {
-  const operator = operation.split("*");
+  const timesOperator = operation.split("*")
+  const minusOperator = operation.split("-")
+  const addOperator = operation.split("+")
+  const divisionOperator = operation.split("/")
 
-  switch (operator) {
-    case "*":
-      display.textContent = multiply(+operator[0], +operator[1]);
-
-      break;
-    case "+":
-      add();
-      break;
-    case "/":
-      divide();
-      break;
-    case "-":
-      subtract();
-      break;
+  if (operation.includes("*")) {
+    display.textContent = multiply(+timesOperator[0], +timesOperator[1]);
   }
-
-  console.log(operator);
+  if (operation.includes("-")) {
+    display.textContent = subtract(+minusOperator[0], +minusOperator[1]);
+  }
+  if (operation.includes("+")) {
+    display.textContent = add(+addOperator[0], +addOperator[1]);
+  }
+  if (operation.includes("/")) {
+    display.textContent = divide(+divisionOperator[0], +divisionOperator[1]);
+  }
 }
 
 function clear() {
