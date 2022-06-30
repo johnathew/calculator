@@ -51,16 +51,16 @@ function doMath() {
   const divisionOperator = operation.split("/")
 
   if (operation.includes("*")) {
-    display.textContent = multiply(+timesOperator[0], +timesOperator[1]);
+    result.textContent = multiply(+timesOperator[0], +timesOperator[1]);
   }
   if (operation.includes("-")) {
-    display.textContent = subtract(+minusOperator[0], +minusOperator[1]);
+    result.textContent = subtract(+minusOperator[0], +minusOperator[1]);
   }
   if (operation.includes("+")) {
-    display.textContent = add(+addOperator[0], +addOperator[1]);
+    result.textContent = add(+addOperator[0], +addOperator[1]);
   }
   if (operation.includes("/")) {
-    display.textContent = divide(+divisionOperator[0], +divisionOperator[1]);
+    result.textContent = divide(+divisionOperator[0], +divisionOperator[1]);
   }
 }
 
@@ -94,20 +94,3 @@ function clear() {
 
 //       operation.replace(e.innerText);
 //     }
-
-// function test() {
-//     switch (operation) {
-//       case "*":
-//         multiply();
-//         break;
-//       case "+":
-//         add();
-//         break;
-//       case "/":
-//         divide();
-//         break;
-//       case "-":
-//         subtract();
-//         break;
-//     }
-//   }
