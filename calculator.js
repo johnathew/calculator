@@ -27,7 +27,7 @@ function calculate(e) {
   }
 }
 
-function operator(e) { 
+function operator(e) {
   if (
     e.id === "plusButton" ||
     e.id === "minusButton" ||
@@ -42,36 +42,28 @@ function operator(e) {
     //     console.log(operation)
     // }
   }
-   
-
 }
 
 function doMath() {
-    const operator = operation.split("*")
+  const operator = operation.split("*");
 
+  switch (operator) {
+    case "*":
+      display.textContent = multiply(+operator[0], +operator[1]);
 
+      break;
+    case "+":
+      add();
+      break;
+    case "/":
+      divide();
+      break;
+    case "-":
+      subtract();
+      break;
+  }
 
-    // switch (operator) {
-    //           case "*":
-    //             display.textContent = multiply(+operator[0], +operator[1]);
-                
-    //             break;
-    //           case "+":
-    //             add();
-    //             break;
-    //           case "/":
-    //             divide();
-    //             break;
-    //           case "-":
-    //             subtract();
-    //             break;
-    //         }
-
-    console.log(operator)
-
-
-
-  
+  console.log(operator);
 }
 
 function clear() {
