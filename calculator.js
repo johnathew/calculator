@@ -95,7 +95,9 @@ function doMath() {
   }
 }
 
-function clear() {
+function reset() {
   result.textContent = "";
   display.textContent = "";
+  operation = "";
+  firstOperand = "";
 }
