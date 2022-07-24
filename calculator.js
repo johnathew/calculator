@@ -1,12 +1,10 @@
 const buttons = document.querySelectorAll("button");
 let result = document.getElementById("result");
 let display = document.getElementById("display");
-let operatorDisplay = document.getElementById("operatorDisplay");
 
 let operation = "";
 let firstOperand = "";
-let waitingOnSecondOperand = false;
-let secondOperand = "";
+let waitingOnOperand = false;
 
 function add(a, b) {
   return (a += b);
@@ -25,10 +23,9 @@ function divide(a, b) {
 }
 
 function calculate(e) {
+
   operation += e.innerText;
   display.textContent = operation;
-
-  console.log(operation);
 
 }
 
@@ -41,7 +38,7 @@ function operate(e) {
       display.textContent.charAt(display.innerHTML.length - 1) === "/" ||
       display.textContent.charAt(display.innerHTML.length - 1) === "*")
   ) {
-    waitingOnSecondOperand = true;
+    waitingOnOperand = true;
     display.textContent = display.textContent.replace(
       `${display.textContent.charAt(display.innerHTML.length - 1)}`,
       e.value
@@ -52,7 +49,7 @@ function operate(e) {
     );
   }
 
-  if (operatorTest === false || waitingOnSecondOperand === false) {
+  if (operatorTest === false || waitingOnOperand === false) {
     firstOperand += e.value;
     switch (e.value) {
       case "+":
