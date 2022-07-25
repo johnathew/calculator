@@ -1,4 +1,3 @@
-const buttons = document.querySelectorAll("button");
 let result = document.getElementById("result");
 let display = document.getElementById("display");
 
@@ -23,7 +22,6 @@ function divide(a, b) {
 }
 
 function calculate(e) {
-
   operation += e.innerText;
   display.textContent = operation;
 
