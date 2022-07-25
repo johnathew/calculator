@@ -22,23 +22,26 @@ function divide(a, b) {
 }
 
 function calculate(e) {
+  const initialZero = document.getElementById("initialZero")
   operation += e.innerText;
   display.textContent = operation;
+  initialZero.textContent = "";
 
 }
 
 function operate(e) {
   const operatorTest = /[+-\/*]/.test(operation);
+  
   if (
     operatorTest === true &&
-    (display.textContent.charAt(display.innerHTML.length - 1) === "+" ||
-      display.textContent.charAt(display.innerHTML.length - 1) === "-" ||
-      display.textContent.charAt(display.innerHTML.length - 1) === "/" ||
-      display.textContent.charAt(display.innerHTML.length - 1) === "*")
+    (display.textContent.charAt(display.textContent.length - 1) === "+" ||
+      display.textContent.charAt(display.textContent.length - 1) === "-" ||
+      display.textContent.charAt(display.textContent.length - 1) === "/" ||
+      display.textContent.charAt(display.textContent.length - 1) === "*")
   ) {
     waitingOnOperand = true;
     display.textContent = display.textContent.replace(
-      `${display.textContent.charAt(display.innerHTML.length - 1)}`,
+      `${display.textContent.charAt(display.textContent.length - 1)}`,
       e.value
     );
     operation = operation.replace(
@@ -90,9 +93,17 @@ function doMath() {
   }
 }
 
+function backspace() {
+  display.textContent = display.textContent.substring(0, display.textContent.length - 1);
+  operation = operation.substring(0, operation.length - 1);
+  firstOperand = firstOperand.substring(0, firstOperand.length - 1);
+}
+
+
 function reset() {
   result.textContent = "";
   display.textContent = "";
   operation = "";
   firstOperand = "";
+  initialZero.textContent = "0";
 }
