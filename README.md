@@ -1,2 +1,2 @@
 # calculator
-Foundations Odin Project
+Javascript calculator 

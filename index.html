@@ -16,10 +16,41 @@
         <p><span id="result"></span></p>
       </div>
       <div class="calculator-keys">
-        <button id="minusButton" class="operator" value="-" onclick="operate(this)">-</button>
-        <button id="plusButton" class="operator" value="+" onclick="operate(this)">+</button>
-        <button id="timesButton" class="operator" value="*" onclick="operate(this)">*</button>
-        <button id="divideButton" class="operator" value="/" onclick="operate(this)">/</button>
+        <button
+          id="minusButton"
+          class="operator"
+          value="-"
+          onclick="operate(this)"
+        >
+          -
+        </button>
+        <button
+          id="plusButton"
+          class="operator"
+          value="+"
+          onclick="operate(this)"
+        >
+          +
+        </button>
+        <button
+          id="timesButton"
+          class="operator"
+          value="*"
+          onclick="operate(this)"
+        >
+          *
+        </button>
+        <button
+          id="divideButton"
+          class="operator"
+          value="/"
+          onclick="operate(this)"
+        >
+          /
+        </button>
+        <button id="equalsButton" class="equal-sign" onclick="doMath()">
+          =
+        </button>
         <button onclick="calculate(this)">7</button>
         <button onclick="calculate(this)">8</button>
         <button onclick="calculate(this)">9</button>
@@ -29,11 +60,10 @@
         <button onclick="calculate(this)">1</button>
         <button onclick="calculate(this)">2</button>
         <button onclick="calculate(this)">3</button>
-        <button class="decimal" value="."  onclick="calculate(this)">.</button>
         <button value="0" onclick="calculate(this)">0</button>
+        <button class="decimal" value="." onclick="calculate(this)">.</button>
         <button class="all-clear" onclick="reset()">AC</button>
         <button class="backspace" onclick="backspace()">⇦</button>
-        <button id="equalsButton" class="equal-sign" onclick="doMath()">=</button>
       </div>
     </div>
     <script src="calculator.js"></script>

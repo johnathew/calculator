@@ -22,16 +22,20 @@ function divide(a, b) {
 }
 
 function calculate(e) {
-  const initialZero = document.getElementById("initialZero")
+  const initialZero = document.getElementById("initialZero");
+
+  if (e.innerText === ".") {
+    if (display.textContent.includes(".") || display.textContent.length === 0) {
+      return; 
+    }
+  }
   operation += e.innerText;
   display.textContent = operation;
   initialZero.textContent = "";
-
 }
-
 function operate(e) {
   const operatorTest = /[+-\/*]/.test(operation);
-  
+
   if (
     operatorTest === true &&
     (display.textContent.charAt(display.textContent.length - 1) === "+" ||
@@ -94,11 +98,13 @@ function doMath() {
 }
 
 function backspace() {
-  display.textContent = display.textContent.substring(0, display.textContent.length - 1);
+  display.textContent = display.textContent.substring(
+    0,
+    display.textContent.length - 1
+  );
   operation = operation.substring(0, operation.length - 1);
   firstOperand = firstOperand.substring(0, firstOperand.length - 1);
 }
-
 
 function reset() {
   result.textContent = "";
